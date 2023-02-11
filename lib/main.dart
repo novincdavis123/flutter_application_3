@@ -6,6 +6,7 @@ import 'package:flutter_application_3/city.dart';
 import 'package:flutter_application_3/contacts.dart';
 import 'package:flutter_application_3/extragrid.dart';
 import 'package:flutter_application_3/griddemo.dart';
+import 'package:flutter_application_3/gridstack.dart';
 import 'package:flutter_application_3/home.dart';
 import 'package:flutter_application_3/listbuild.dart';
 import 'package:flutter_application_3/listcustom.dart';
@@ -34,8 +35,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(Duration(seconds: 1), () {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => Ext()));
+      Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Grider6()));
     });
   }
   @override
