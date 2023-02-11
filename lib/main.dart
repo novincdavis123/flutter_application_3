@@ -15,6 +15,7 @@ import 'package:flutter_application_3/newpage.dart';
 import 'package:flutter_application_3/pract.dart';
 import 'package:flutter_application_3/pract3.dart';
 import 'package:flutter_application_3/pract4.dart';
+import 'package:flutter_application_3/profile.dart';
 import 'Second.dart';
 
 void main() {
@@ -37,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 1), () {
       Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => Newstag()));
+          MaterialPageRoute(builder: (context) => Tack1()));
     });
   }
   @override
