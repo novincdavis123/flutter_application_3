@@ -8,14 +8,17 @@ import 'package:flutter_application_3/extragrid.dart';
 import 'package:flutter_application_3/griddemo.dart';
 import 'package:flutter_application_3/gridstack.dart';
 import 'package:flutter_application_3/home.dart';
+import 'package:flutter_application_3/list1.dart';
 import 'package:flutter_application_3/listbuild.dart';
 import 'package:flutter_application_3/listcustom.dart';
 import 'package:flutter_application_3/listseparated.dart';
+import 'package:flutter_application_3/lot.dart';
 import 'package:flutter_application_3/newpage.dart';
 import 'package:flutter_application_3/pract.dart';
 import 'package:flutter_application_3/pract3.dart';
 import 'package:flutter_application_3/pract4.dart';
 import 'package:flutter_application_3/profile.dart';
+import 'package:flutter_application_3/whatsapp.dart';
 import 'Second.dart';
 
 void main() {
@@ -37,8 +40,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(Duration(seconds: 1), () {
-      Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => Tack1()));
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => Whats()));
     });
   }
   @override
