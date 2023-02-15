@@ -26,24 +26,28 @@ void main() {
     theme: ThemeData(primarySwatch: Colors.green),
     debugShowCheckedModeBanner: false,
     home: SplashScreen(),
-    routes: {'screen1':(ctx){
-      return Customdemo();
-    }
+    routes: {
+      'screen1': (ctx) {
+        return Customdemo();
+      }
     },
   ));
 }
+
 class SplashScreen extends StatefulWidget {
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
+
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(Duration(seconds: 1), () {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => Whats()));
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (context) => Whats()));
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
