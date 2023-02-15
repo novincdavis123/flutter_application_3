@@ -14,11 +14,11 @@ class Whats extends StatelessWidget {
           title: Text("WhatsApp"),
           actions: [
             Icon(Icons.camera_alt),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             Icon(Icons.search),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             PopupMenuButton(
@@ -32,18 +32,30 @@ class Whats extends StatelessWidget {
                     ],
                 child: Icon(Icons.more_vert)),
           ],
-          bottom: const TabBar(tabs: [
-            Tab(
-              icon: Icon(Icons.people),
+          bottom: TabBar(tabs: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .1,
+              child: const Tab(
+                icon: Icon(Icons.people),
+              ),
             ),
-            Tab(
-              text: "Chats",
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .3,
+              child: const Tab(
+                text: "Chats",
+              ),
             ),
-            Tab(
-              text: "Status",
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .3,
+              child: const Tab(
+                text: "Status",
+              ),
             ),
-            Tab(
-              text: "Calls",
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .3,
+              child: const Tab(
+                text: "Calls",
+              ),
             )
           ]),
         ),
