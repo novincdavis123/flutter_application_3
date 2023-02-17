@@ -23,7 +23,7 @@ import 'package:flutter_application_3/whatsapp.dart';
 import 'Second.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(MaterialApp(useInheritedMediaQuery: true,
     theme: ThemeData(primarySwatch: Colors.green),
     debugShowCheckedModeBanner: false,
     home: SplashScreen(),
@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 1), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Draw()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => Whats()));
     });
   }
 

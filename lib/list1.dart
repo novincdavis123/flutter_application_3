@@ -2,13 +2,26 @@ import 'package:flutter/material.dart';
 
 class Comm extends StatelessWidget {
   var list1 = [
-    Stack(
-      children: const [CircleAvatar(
-        radius: 20,
-        child: Icon(color:Colors.grey,Icons.people),
+    Stack(children: const [
+      CircleAvatar(
+        radius: 25,
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        child: CircleAvatar(
+          radius: 20,
+          child: Icon(color: Colors.grey, Icons.people),
+        ),
       ),
-       Positioned(left: 20,top: 15,child: CircleAvatar(radius: 10,backgroundColor: Colors.green,child: Icon(Icons.add,color: Colors.white,))),
-  ]),
+      Positioned(
+          right: 3,
+          bottom: 5,
+          child: CircleAvatar(
+              radius: 10,
+              backgroundColor: Colors.green,
+              child: Icon(size:15,
+                Icons.add,
+                color: Colors.white,
+              ))),
+    ]),
     const CircleAvatar(
       radius: 20,
       backgroundImage: NetworkImage(
