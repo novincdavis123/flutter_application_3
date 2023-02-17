@@ -4,6 +4,7 @@ import 'package:flutter_application_3/ListDemo.dart';
 import 'package:flutter_application_3/cart.dart';
 import 'package:flutter_application_3/city.dart';
 import 'package:flutter_application_3/contacts.dart';
+import 'package:flutter_application_3/draw.dart';
 import 'package:flutter_application_3/extragrid.dart';
 import 'package:flutter_application_3/griddemo.dart';
 import 'package:flutter_application_3/gridstack.dart';
@@ -44,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 1), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Whats()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => Draw()));
     });
   }
 
