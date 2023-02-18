@@ -39,6 +39,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   lottie: ^2.2.0
   device_preview: ^0.3.0+1
+  convex_bottom_bar: ^3.2.0
 
 dev_dependencies:
   flutter_test:
