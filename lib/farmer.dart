@@ -38,6 +38,8 @@ class Farmer extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(slivers: [
         SliverAppBar(
+          pinned: true,
+          floating: true,
           backgroundColor: Colors.green,
           title: Text('FARMERS FRESH ZONE'),
           actions: [
@@ -64,44 +66,56 @@ class Farmer extends StatelessWidget {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Container(
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.green),
-                          color: Colors.white30,
+                          color: Color.fromARGB(255, 202, 226, 175),
                           borderRadius: BorderRadius.circular(30)),
-                      child: Text('VEGETABLES',
-                          style: TextStyle(color: Colors.green))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('VEGETABLES',
+                            style: TextStyle(color: Colors.green)),
+                      )),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Container(
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.green),
-                          color: Colors.white30,
+                          color: Color.fromARGB(255, 202, 226, 175),
                           borderRadius: BorderRadius.circular(30)),
-                      child: Text('FRUITS',
-                          style: TextStyle(color: Colors.green))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('FRUITS',
+                            style: TextStyle(color: Colors.green)),
+                      )),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Container(
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.green),
-                          color: Colors.white30,
+                          color: Color.fromARGB(255, 202, 226, 175),
                           borderRadius: BorderRadius.circular(30)),
-                      child: Text('EXOTIC',
-                          style: TextStyle(color: Colors.green))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('EXOTIC',
+                            style: TextStyle(color: Colors.green)),
+                      )),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Container(
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.green),
-                          color: Colors.white30,
+                          color: Color.fromARGB(255, 202, 226, 175),
                           borderRadius: BorderRadius.circular(30)),
-                      child: Text('FRESH CUTS',
-                          style: TextStyle(color: Colors.green))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('FRESH CUTS',
+                            style: TextStyle(color: Colors.green)),
+                      )),
                 ),
               ],
             ),
@@ -132,19 +146,22 @@ class Farmer extends StatelessWidget {
                   child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.only(
+                            left: 40, top: 10, bottom: 10),
                         child: Column(
                           children: [Icon(Icons.timer), Text('30 MINS POLICY')],
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.only(
+                            left: 40, top: 10, bottom: 10),
                         child: Column(
                           children: [Icon(Icons.phone), Text('TRACEABILITY')],
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.only(
+                            left: 40, top: 10, bottom: 10),
                         child: Column(
                           children: [
                             Icon(Icons.person),
@@ -157,25 +174,48 @@ class Farmer extends StatelessWidget {
                 ),
               ),
             ]),
-            Text(
-              'Shop By Category',
-              style: TextStyle(fontWeight: FontWeight.bold),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Shop By Category',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             )
           ]),
         ),
         SliverGrid(
             delegate:
                 SliverChildBuilderDelegate(childCount: 6, (context, index) {
-              return Container(
-                  decoration: BoxDecoration(
-                      image:
-                          DecorationImage(image: Im[index], fit: BoxFit.cover),
-                      borderRadius: BorderRadius.circular(20)));
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Card(
+                    child: Column(
+                      children: [
+                        Container(
+                            height: MediaQuery.of(context).size.height / 8,
+                            width: MediaQuery.of(context).size.width * .3,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: Im[index], fit: BoxFit.cover),
+                                borderRadius: BorderRadius.circular(20))),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          child: a[index],
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              );
             }),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, mainAxisSpacing: 20, crossAxisSpacing: 20))
+                crossAxisCount: 3, mainAxisSpacing: 10, crossAxisSpacing: 10))
       ]),
-      bottomNavigationBar: NavigationBar(destinations: [
+      bottomNavigationBar: NavigationBar(height: 50, destinations: [
         Column(
           children: [Icon(Icons.home), Text('HOME')],
         ),
