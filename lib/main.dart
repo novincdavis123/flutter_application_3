@@ -9,6 +9,7 @@ import 'package:flutter_application_3/extragrid.dart';
 import 'package:flutter_application_3/griddemo.dart';
 import 'package:flutter_application_3/gridstack.dart';
 import 'package:flutter_application_3/home.dart';
+import 'package:flutter_application_3/hotel.dart';
 import 'package:flutter_application_3/list1.dart';
 import 'package:flutter_application_3/listbuild.dart';
 import 'package:flutter_application_3/listcustom.dart';
@@ -46,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 1), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Farmer()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => Hotel()));
     });
   }
 
