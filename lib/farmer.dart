@@ -149,14 +149,10 @@ class Farmer extends StatelessWidget {
                         padding: const EdgeInsets.only(
                             left: 40, top: 10, bottom: 10),
                         child: Column(
-                          children: [Icon(Icons.timer), Text('30 MINS POLICY')],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            left: 40, top: 10, bottom: 10),
-                        child: Column(
-                          children: [Icon(Icons.phone), Text('TRACEABILITY')],
+                          children: [
+                            Icon(Icons.timer, color: Colors.blue),
+                            Text('30 MINS POLICY')
+                          ],
                         ),
                       ),
                       Padding(
@@ -164,7 +160,17 @@ class Farmer extends StatelessWidget {
                             left: 40, top: 10, bottom: 10),
                         child: Column(
                           children: [
-                            Icon(Icons.person),
+                            Icon(Icons.phone, color: Colors.red),
+                            Text('TRACEABILITY')
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 40, top: 10, bottom: 10),
+                        child: Column(
+                          children: [
+                            Icon(Icons.person, color: Colors.yellow),
                             Text('LOCAL SOURCING')
                           ],
                         ),
