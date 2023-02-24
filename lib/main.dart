@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 1), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Hotel()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => Home()));
     });
   }
 

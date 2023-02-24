@@ -41,6 +41,7 @@ dependencies:
   convex_bottom_bar: ^3.2.0
   carousel_slider: ^4.2.1
   device_preview: ^1.1.0
+  icons_plus: ^4.0.0
 
 dev_dependencies:
   flutter_test:
