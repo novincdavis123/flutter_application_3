@@ -20,19 +20,19 @@ import 'package:flutter_application_3/pract.dart';
 import 'package:flutter_application_3/pract3.dart';
 import 'package:flutter_application_3/pract4.dart';
 import 'package:flutter_application_3/profile.dart';
+import 'package:flutter_application_3/tourism1.dart';
+import 'package:flutter_application_3/tourism3.dart';
 import 'package:flutter_application_3/whatsapp.dart';
 import 'Second.dart';
 import 'farmer.dart';
 
 void main() {
   runApp(MaterialApp(useInheritedMediaQuery: true,
-    theme: ThemeData(primarySwatch: Colors.green),
+    theme: ThemeData(primarySwatch: Colors.blue),
     debugShowCheckedModeBanner: false,
     home: SplashScreen(),
     routes: {
-      'screen1': (ctx) {
-        return Customdemo();
-      }
+      "second": (context) => Tourism3(),
     },
   ));
 }
@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 1), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Home()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => Tourism1()));
     });
   }
 

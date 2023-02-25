@@ -40,7 +40,7 @@ class Farmer extends StatelessWidget {
         SliverAppBar(
           pinned: true,
           floating: true,
-          backgroundColor: Colors.green,
+          backgroundColor: Color.fromARGB(255, 211, 226, 211),
           title: Text('FARMERS FRESH ZONE'),
           actions: [
             Row(children: [
