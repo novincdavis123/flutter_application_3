@@ -53,28 +53,48 @@ class Tourism2 extends StatelessWidget {
                 ],
               ),
             ),
-           GridView(shrinkWrap: true,
-            gridDelegate: 
-           SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 230,
-                mainAxisSpacing: 20,
-                crossAxisSpacing: 20,
-                childAspectRatio: 1.0),
-            children: dummyProducts.map((product) {
-            return GridTile(
-              child: InkWell(
-              onTap: () => goToSecond(context, product["id"]),
-                child: Container(child: Text(product["name"]),
-                  decoration: BoxDecoration(image:DecorationImage(fit:BoxFit.cover,image: NetworkImage(product["image"]))),
-                ),
-              ),
-            );
-          }).toList(),
-           ),
+            GridView(
+              shrinkWrap: true,
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 300,
+                  mainAxisSpacing: 5,
+                  crossAxisSpacing: 5,
+                  childAspectRatio: 1.0),
+              children: dummyProducts.map((product) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GridTile(
+                    child: InkWell(
+                      onTap: () => goToSecond(context, product["id"]),
+                      child: Stack(children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(product["image"]))),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(product["price"],style: TextStyle(color: Colors.white),),
+                              ),
+                              color: Color.fromARGB(255, 10, 90, 156)),
+                        ),
+                        Positioned(bottom: 20,left: 5,
+                          child: Container(child: Text(product["name"],style: TextStyle(color: Colors.white),),))
+                      ]),
+                    ),
+                  ),
+                );
+              }).toList(),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 3, 33, 78)),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(255, 3, 33, 78)),
                   onPressed: () {},
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -86,10 +106,8 @@ class Tourism2 extends StatelessWidget {
       ),
     );
   }
+
   void goToSecond(BuildContext context, productId) {
     Navigator.pushNamed(context, "second", arguments: productId);
   }
-  
 }
-
-
