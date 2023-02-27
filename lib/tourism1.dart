@@ -8,8 +8,11 @@ class Tourism1 extends StatelessWidget {
         body: ListView(
       children: [
         SizedBox(height: 50),
-        CircleAvatar(radius: 100,
-          backgroundImage: NetworkImage('https://images.unsplash.com/photo-1601158935942-52255782d322?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGxvZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'),),
+        CircleAvatar(
+          radius: 100,
+          backgroundImage: NetworkImage(
+              'https://images.unsplash.com/photo-1601158935942-52255782d322?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGxvZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'),
+        ),
         Padding(
           padding: const EdgeInsets.only(left: 160),
           child: Text(
@@ -29,7 +32,10 @@ class Tourism1 extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
                   backgroundColor: Colors.blue[700]),
-              onPressed: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Tourism2()));},
+              onPressed: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => Tourism2()));
+              },
               child: Text('Log In')),
         ),
         Padding(
