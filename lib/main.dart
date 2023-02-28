@@ -22,6 +22,7 @@ import 'package:flutter_application_3/pract.dart';
 import 'package:flutter_application_3/pract3.dart';
 import 'package:flutter_application_3/pract4.dart';
 import 'package:flutter_application_3/profile.dart';
+import 'package:flutter_application_3/profile2.dart';
 import 'package:flutter_application_3/tourism1.dart';
 import 'package:flutter_application_3/tourism3.dart';
 import 'package:flutter_application_3/whatsapp.dart';
@@ -49,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 1), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Exlo()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => Profile2()));
     });
   }
 
