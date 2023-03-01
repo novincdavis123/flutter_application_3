@@ -4,6 +4,7 @@ import 'package:flutter_application_3/Exlo.dart';
 import 'package:flutter_application_3/ListDemo.dart';
 import 'package:flutter_application_3/cart.dart';
 import 'package:flutter_application_3/city.dart';
+import 'package:flutter_application_3/clipp.dart';
 import 'package:flutter_application_3/contacts.dart';
 import 'package:flutter_application_3/draw.dart';
 import 'package:flutter_application_3/exp.dart';
@@ -50,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 1), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Profile2()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => Clipp()));
     });
   }
 
