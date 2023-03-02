@@ -5,11 +5,11 @@ import 'package:flutter_application_3/tourism/dummy_tour.dart';
 class Tour2 extends StatelessWidget {
   var images = [
     NetworkImage(
-        'https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZnJ1aXRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'),
+        'https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGV1cm9wZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'),
     NetworkImage(
-        'https://images.unsplash.com/photo-1610043775988-060847913994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTI2fHxmcnVpdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'),
+        'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGV1cm9wZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'),
     NetworkImage(
-        'https://images.unsplash.com/photo-1620217491382-4772d58bc863?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxmcnVpdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'),
+        'https://images.unsplash.com/photo-1471874708433-acd480424946?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGV1cm9wZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -49,18 +49,21 @@ class Tour2 extends StatelessWidget {
           ),
           CarouselSlider(
             items: List.generate(3, (index) {
-              return Container(
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: images[index], fit: BoxFit.cover)),
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                          image: images[index], fit: BoxFit.cover)),
+                ),
               );
             }),
             options: CarouselOptions(
-              height: 100,
+              height: 200,
               pauseAutoPlayInFiniteScroll: true,
               autoPlay: true,
               enlargeCenterPage: false,
-              viewportFraction: 1,
+              viewportFraction: .4,
               aspectRatio: 16 / 7,
               initialPage: 2,
             ),
