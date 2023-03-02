@@ -25,6 +25,8 @@ import 'package:flutter_application_3/pract3.dart';
 import 'package:flutter_application_3/pract4.dart';
 import 'package:flutter_application_3/profile.dart';
 import 'package:flutter_application_3/profile2.dart';
+import 'package:flutter_application_3/tourism/tourismfirst.dart';
+import 'package:flutter_application_3/tourism/tourismsecond.dart';
 import 'package:flutter_application_3/tourism1.dart';
 import 'package:flutter_application_3/tourism3.dart';
 import 'package:flutter_application_3/whatsapp.dart';
@@ -37,7 +39,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     home: SplashScreen(),
     routes: {
-      "second": (context) => Tourism3(),
+      "second": (context) => Tour2(),
     },
   ));
 }
@@ -52,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 1), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Music()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => Tour1()));
     });
   }
 
