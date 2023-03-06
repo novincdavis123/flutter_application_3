@@ -45,7 +45,7 @@ dependencies:
   rive: ^0.10.2
   flutter_custom_clippers: ^2.1.0
   google_nav_bar: ^5.0.6
-  sliding_clipped_nav_bar: ^3.1.0+4
+  flashy_tab_bar2: ^0.0.5
 
 dev_dependencies:
   flutter_test:
