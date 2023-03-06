@@ -1,7 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
 
-class Musify extends StatelessWidget {
+class Musify extends StatefulWidget {
+  @override
+  State<Musify> createState() => _MusifyState();
+}
+
+class _MusifyState extends State<Musify> {
+  int _selectedIndex = 0;
   var images = [
     NetworkImage(
         'https://images.unsplash.com/photo-1504898770365-14faca6a7320?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fG11c2ljfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'),
@@ -164,6 +171,36 @@ class Musify extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: FlashyTabBar(
+        backgroundColor: Colors.black,
+        selectedIndex: _selectedIndex,
+        showElevation: true,
+        onItemSelected: (index) => setState(() {
+          _selectedIndex = index;
+        }),
+        items: [
+          FlashyTabBarItem(
+            activeColor: Colors.pink,
+            icon: Icon(Icons.home),
+            title: Text('Home'),
+          ),
+          FlashyTabBarItem(
+            activeColor: Colors.pink,
+            icon: Icon(Icons.search),
+            title: Text('Search'),
+          ),
+          FlashyTabBarItem(
+            activeColor: Colors.pink,
+            icon: Icon(Icons.video_file_sharp),
+            title: Text('Files'),
+          ),
+          FlashyTabBarItem(
+            activeColor: Colors.pink,
+            icon: Icon(Icons.more_horiz),
+            title: Text('More'),
           ),
         ],
       ),
