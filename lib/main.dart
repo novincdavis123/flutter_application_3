@@ -19,6 +19,7 @@ import 'package:flutter_application_3/listcustom.dart';
 import 'package:flutter_application_3/listseparated.dart';
 import 'package:flutter_application_3/lot.dart';
 import 'package:flutter_application_3/music.dart';
+import 'package:flutter_application_3/musify.dart';
 import 'package:flutter_application_3/newpage.dart';
 import 'package:flutter_application_3/pract.dart';
 import 'package:flutter_application_3/pract3.dart';
@@ -54,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 1), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Music()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => Musify()));
     });
   }
 
