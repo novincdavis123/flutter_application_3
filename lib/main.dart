@@ -26,6 +26,7 @@ import 'package:flutter_application_3/pract3.dart';
 import 'package:flutter_application_3/pract4.dart';
 import 'package:flutter_application_3/profile.dart';
 import 'package:flutter_application_3/profile2.dart';
+import 'package:flutter_application_3/shared/reglog/reg.dart';
 import 'package:flutter_application_3/tourism/tourismfirst.dart';
 import 'package:flutter_application_3/tourism/tourismsecond.dart';
 import 'package:flutter_application_3/tourism1.dart';
@@ -55,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 1), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Todo1()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => Registration()));
     });
   }
 

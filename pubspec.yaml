@@ -46,6 +46,8 @@ dependencies:
   flutter_custom_clippers: ^2.1.0
   google_nav_bar: ^5.0.6
   flashy_tab_bar2: ^0.0.5
+  shared_preferences: ^2.0.18
+  
 
 dev_dependencies:
   flutter_test:
