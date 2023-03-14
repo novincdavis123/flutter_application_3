@@ -48,6 +48,7 @@ dependencies:
   flashy_tab_bar2: ^0.0.5
   shared_preferences: ^2.0.18
   like_button: ^2.0.5
+  flutter_snake_navigationbar: ^0.6.1
   
 
 dev_dependencies:

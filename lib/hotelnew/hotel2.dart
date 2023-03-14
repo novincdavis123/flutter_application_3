@@ -14,7 +14,8 @@ class _Hotel2State extends State<Hotel2> {
   var _selectedItemPosition = 0;
   var selectedGradient =
       LinearGradient(colors: [Colors.red, Colors.yellow, Colors.orange]);
-  var unselectedGradient;
+  var unselectedGradient =
+      LinearGradient(colors: [Colors.green, Colors.purple, Colors.pink]);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
