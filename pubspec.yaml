@@ -49,6 +49,7 @@ dependencies:
   shared_preferences: ^2.0.18
   like_button: ^2.0.5
   flutter_snake_navigationbar: ^0.6.1
+  water_drop_nav_bar: ^2.2.0+5
   
 
 dev_dependencies:
