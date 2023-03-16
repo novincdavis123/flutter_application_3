@@ -33,6 +33,7 @@ import 'package:flutter_application_3/tourism/tourismfirst.dart';
 import 'package:flutter_application_3/tourism/tourismsecond.dart';
 import 'package:flutter_application_3/tourism1.dart';
 import 'package:flutter_application_3/tourism3.dart';
+import 'package:flutter_application_3/uibycompany/page1.dart';
 import 'package:flutter_application_3/whatsapp.dart';
 import 'Second.dart';
 import 'farmer.dart';
@@ -58,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 1), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Hotel2()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => Invoice()));
     });
   }
 
