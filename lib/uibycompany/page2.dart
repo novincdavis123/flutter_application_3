@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/uibycompany/page3.dart';
 
 class Dater extends StatelessWidget {
   @override
@@ -81,7 +82,10 @@ class Dater extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                         minimumSize: Size(240, 50),
                         backgroundColor: Color.fromARGB(255, 7, 87, 153)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Uploader()));
+                    },
                     child: Center(
                       child: Row(
                         children: [

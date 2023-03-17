@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/uibycompany/page2.dart';
 
 class Invoice extends StatelessWidget {
   @override
@@ -66,7 +67,10 @@ class Invoice extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                         minimumSize: Size(240, 50),
                         backgroundColor: Color.fromARGB(255, 7, 87, 153)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Dater()));
+                    },
                     child: Center(
                       child: Row(
                         children: [

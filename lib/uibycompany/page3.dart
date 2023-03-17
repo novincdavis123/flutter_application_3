@@ -12,6 +12,11 @@ class _UploaderState extends State<Uploader> {
   int selectedIndex = 0;
   late PageController pageController;
   @override
+  void initState() {
+    super.initState();
+    pageController = PageController(initialPage: selectedIndex);
+  }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [
