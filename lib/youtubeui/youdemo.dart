@@ -23,16 +23,6 @@ class _DemState extends State<Dem> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // floatingActionButton: FloatingActionButton(
-      //     child: Icon(
-      //         _controller.value.isPlaying ? Icons.pause : Icons.play_arrow),
-      //     onPressed: () {
-      //       setState(() {
-      //         _controller.value.isPlaying
-      //             ? _controller.pause()
-      //             : _controller.play();
-      //       });
-      //     }),
       body: Column(
         children: [
           Container(
