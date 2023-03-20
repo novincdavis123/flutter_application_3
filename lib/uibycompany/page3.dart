@@ -1,7 +1,6 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 
 class Uploader extends StatefulWidget {
   @override
@@ -9,13 +8,6 @@ class Uploader extends StatefulWidget {
 }
 
 class _UploaderState extends State<Uploader> {
-  int selectedIndex = 0;
-  late PageController pageController;
-  @override
-  void initState() {
-    super.initState();
-    pageController = PageController(initialPage: selectedIndex);
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -381,35 +373,6 @@ class _UploaderState extends State<Uploader> {
           ),
         ),
       ]),
-      bottomNavigationBar: WaterDropNavBar(
-        backgroundColor: Colors.white,
-        onItemSelected: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
-          pageController.animateToPage(selectedIndex,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutQuad);
-        },
-        selectedIndex: selectedIndex,
-        barItems: [
-          BarItem(
-            filledIcon: Icons.home,
-            outlinedIcon: Icons.home_filled,
-          ),
-          BarItem(
-            filledIcon: Icons.bookmark_rounded,
-            outlinedIcon: Icons.bookmark_border_rounded,
-          ),
-          BarItem(
-              filledIcon: Icons.wallet_giftcard,
-              outlinedIcon: Icons.wallet_giftcard_outlined),
-          BarItem(
-            filledIcon: Icons.account_circle,
-            outlinedIcon: Icons.account_circle_outlined,
-          ),
-        ],
-      ),
     );
   }
 }

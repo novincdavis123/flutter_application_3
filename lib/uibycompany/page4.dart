@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 
 class Prof extends StatefulWidget {
   @override
@@ -7,8 +6,6 @@ class Prof extends StatefulWidget {
 }
 
 class _ProfState extends State<Prof> {
-  int selectedIndex = 0;
-  late PageController pageController;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -173,35 +170,6 @@ class _ProfState extends State<Prof> {
                 ),
               ],
             ),
-          ),
-        ],
-      ),
-      bottomNavigationBar: WaterDropNavBar(
-        backgroundColor: Colors.white,
-        onItemSelected: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
-          pageController.animateToPage(selectedIndex,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutQuad);
-        },
-        selectedIndex: selectedIndex,
-        barItems: [
-          BarItem(
-            filledIcon: Icons.home,
-            outlinedIcon: Icons.home_filled,
-          ),
-          BarItem(
-            filledIcon: Icons.bookmark_rounded,
-            outlinedIcon: Icons.bookmark_border_rounded,
-          ),
-          BarItem(
-              filledIcon: Icons.wallet_giftcard,
-              outlinedIcon: Icons.wallet_giftcard_outlined),
-          BarItem(
-            filledIcon: Icons.account_circle,
-            outlinedIcon: Icons.account_circle_outlined,
           ),
         ],
       ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/uibycompany/page3.dart';
+import 'package:flutter_application_3/uibycompany/navtab.dart';
 
 class Dater extends StatelessWidget {
   @override
@@ -84,7 +84,7 @@ class Dater extends StatelessWidget {
                         backgroundColor: Color.fromARGB(255, 7, 87, 153)),
                     onPressed: () {
                       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => Uploader()));
+          .push(MaterialPageRoute(builder: (context) => Nav()));
                     },
                     child: Center(
                       child: Row(
