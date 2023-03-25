@@ -10,6 +10,7 @@ class SQLHelper {
        password TEXT
       )""");
   }
+
   //create database
   static Future<sql.Database> OpenDb() async {
     return sql.openDatabase('datauser', version: 1,
@@ -17,8 +18,10 @@ class SQLHelper {
       await createTable(db);
     });
   }
+
   //create new user
-  static Future<int> AddNewUser(String name, String email, String password) async {
+  static Future<int> AddNewUser(
+      String name, String email, String password) async {
     final db = await SQLHelper.OpenDb();
     final data = {'name': name, 'email': email, 'password': password};
     final id = db.insert('user', data);
@@ -29,7 +32,7 @@ class SQLHelper {
     final db = await SQLHelper.OpenDb();
     final data = await db.rawQuery(
         "SELECT * FROM user WHERE email= '$email' AND password = '$password' ");
-   // print(data.toString());
+    // print(data.toString());
     if (data.isNotEmpty) {
       return data;
     }

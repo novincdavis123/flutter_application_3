@@ -12,9 +12,7 @@ class Signup_Form extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     void Addnewuser(String name, String email, String password) async {
-
       var id = await SQLHelper.AddNewUser(name, email, password);
 
       if (id != null) {

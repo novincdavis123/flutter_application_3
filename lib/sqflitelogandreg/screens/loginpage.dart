@@ -11,23 +11,27 @@ class Login_Form extends StatefulWidget {
 }
 
 class _Login_FormState extends State<Login_Form> {
-
   var formkey = GlobalKey<FormState>();
   final TextEditingController conemail = TextEditingController();
   final TextEditingController conpass = TextEditingController();
 
   void logincheck(String email, String password) async {
-
     if (email == 'admin@gmail.com' && password == '123456') {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => const AdminHome()));
     } else {
       var data = await SQLHelper.CheckLogin(email, password);
-      if(data.isNotEmpty){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Home(data: data,)));
+      if (data.isNotEmpty) {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => Home(
+                      data: data,
+                    )));
         print('Login Success');
-      }else if(data.isEmpty){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Login_Signup()));
+      } else if (data.isEmpty) {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => Login_Signup()));
         print('Login faild');
       }
     }
@@ -116,9 +120,7 @@ class _Login_FormState extends State<Login_Form> {
                   final valid = formkey.currentState!.validate();
 
                   if (valid) {
-
                     logincheck(conemail.text, conpass.text);
-
                   } else {}
                 },
                 child: const Text("LOGIN"),
