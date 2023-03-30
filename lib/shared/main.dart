@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyLoginPage(),
+      home:Registration(),
     );
   }
 }
@@ -40,12 +40,12 @@ class _MyLoginPageState extends State<MyLoginPage> {
 
   void check_if_already_login() async {
     logindata = await SharedPreferences.getInstance();
-    newuser = (logindata.getBool('newuser') ?? true);  // null ?? second
+    newuser = (logindata.getBool('newuser') ?? true); // null ?? second
     print(newuser);
 
     if (newuser == false) {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Registration()));
+          context, MaterialPageRoute(builder: (context) => MyDashboard()));
     }
   }
 
@@ -105,7 +105,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
 
                   logindata.setBool('newuser', false);
                   logindata.setString('username', username);
-                 // logindata.setString('password', password);
+                  // logindata.setString('password', password);
 
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => MyDashboard()));
