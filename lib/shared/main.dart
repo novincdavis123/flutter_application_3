@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/shared/reglog/reg.dart';
 import 'package:flutter_application_3/shared/screens/profscreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -44,7 +45,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
 
     if (newuser == false) {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => MyDashboard()));
+          context, MaterialPageRoute(builder: (context) => Registration()));
     }
   }
 
