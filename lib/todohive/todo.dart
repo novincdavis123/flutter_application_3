@@ -4,8 +4,9 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
   await Hive.initFlutter();
-  await Hive.openBox('todo_box');
+  await Hive.openBox('NoteBook');
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: Nhive(),
   ));
 }
@@ -19,7 +20,7 @@ class _NhiveState extends State<Nhive> {
   List<Map<String, dynamic>> tasks = [];
   final title = TextEditingController();
   final task = TextEditingController();
-  final mytaskbox = Hive.box('todo_box');
+  final mytaskbox = Hive.box('NoteBook');
   @override
   void initState() {
     super.initState();
@@ -49,8 +50,10 @@ class _NhiveState extends State<Nhive> {
   Future<void> deleTask(int itemkey) async {
     await mytaskbox.delete(itemkey);
     fetchTask();
-    ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text('successfully Deleted')));
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        backgroundColor: Colors.red,
+        showCloseIcon: true,
+        content: Text('successfully Deleted')));
   }
 
   showTask(BuildContext context, int? itemkey) {
@@ -75,14 +78,25 @@ class _NhiveState extends State<Nhive> {
               children: [
                 TextField(
                   controller: title,
-                  decoration: InputDecoration(hintText: 'Title'),
+                  decoration: InputDecoration(
+                      hintText: 'Title',
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.blue),
+                          borderRadius: BorderRadius.circular(20))),
                 ),
+                SizedBox(height: 20),
                 TextField(
                   controller: task,
-                  decoration: InputDecoration(hintText: 'Decrption'),
+                  decoration: InputDecoration(
+                      hintText: 'Decrption',
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.blue),
+                          borderRadius: BorderRadius.circular(20))),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 20),
                 ElevatedButton(
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.green),
                     onPressed: () async {
                       if (itemkey == null) {
                         createTask({
@@ -98,8 +112,7 @@ class _NhiveState extends State<Nhive> {
                       task.text = '';
                       Navigator.of(context).pop();
                     },
-                    child:
-                        Text(itemkey == null ? 'Create Task' : 'Update Task'))
+                    child: Text(itemkey == null ? 'Create New' : 'Update'))
               ],
             ),
           );
@@ -110,35 +123,39 @@ class _NhiveState extends State<Nhive> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('TODO'),
+        leading: Icon(Icons.menu),
+        actions: [Icon(Icons.favorite_border)],
+        backgroundColor: Colors.amberAccent,
+        title: Center(
+            child: Text('NoteBook',
+                style: TextStyle(
+                    color: Colors.deepPurpleAccent,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold))),
       ),
       body: tasks.isEmpty
-          ? Center(child: Text('NO Task'))
+          ? Center(child: Text('No Tasks found'))
           : ListView.builder(
               itemCount: tasks.length,
               itemBuilder: (ctx, index) {
                 final mytask = tasks[index];
                 return Card(
+                    color: Colors.grey,
                     child: ListTile(
-                  title: Text(mytask['title']),
-                  subtitle: Text(mytask['task']),
-                  trailing: Wrap(
-                    children: [
-                      IconButton(
-                          onPressed: () {
-                            showTask(context, mytask['id']);
-                          },
-                          icon: Icon(Icons.edit)),
-                      IconButton(
-                          onPressed: () {
-                            deleTask(mytask['id']);
-                          },
-                          icon: Icon(Icons.delete)),
-                    ],
-                  ),
-                ));
+                      onTap: () {
+                        showTask(context, mytask['id']);
+                      },
+                      onLongPress: () {
+                        deleTask(mytask['id']);
+                      },
+                      title: Text(mytask['title']),
+                      subtitle: Text(mytask['task']),
+                    ));
               }),
       floatingActionButton: FloatingActionButton(
+        splashColor: Colors.yellow,
+        hoverColor: Colors.orange,
+        backgroundColor: Colors.red,
         onPressed: () => showTask(context, null),
         child: Icon(Icons.add),
       ),
