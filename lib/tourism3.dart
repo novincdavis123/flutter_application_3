@@ -9,39 +9,50 @@ class Tourism3 extends StatelessWidget {
     final product =
         dummyProducts.firstWhere((element) => element["id"] == productId);
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Beautiful Places"),
-      ),
       body: ListView(children: [
-        Padding(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            children: [
-              Container(
-                height: 200,
+        Row(
+          children: [
+            Column(
+              children: [
+                Text('dataghjhgghghghggg\nfdfffgfgfvv'),
+              ],
+            ),
+            SizedBox(
+              width: 100,
+            ),
+            VerticalDivider(indent: 10, endIndent: 15),
+            SizedBox(
+              width: 40,
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Container(
+                height: 100,
+                width: 100,
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         fit: BoxFit.cover,
                         image: NetworkImage(product["image"]))),
               ),
-              Text(
-                "${product["name"]}",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Text("${product["description"]}"),
-              Text("${product["price"]}"),
-              Text("${product["rating"]}"),
-              Row(
-                children: [SizedBox(width: 150),
-                  Icon(Icons.star, color: Colors.yellow),
-                  Icon(Icons.star, color: Colors.yellow),
-                  Icon(Icons.star, color: Colors.yellow),
-                  Icon(Icons.star, color: Colors.yellow),
-                  Icon(Icons.star, color: Colors.yellow),
-                ],
-              )
-            ],
-          ),
+            ),
+          ],
+        ),
+        Text(
+          "${product["name"]}",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        Text("${product["description"]}"),
+        Text("${product["price"]}"),
+        Text("${product["rating"]}"),
+        Row(
+          children: [
+            SizedBox(width: 150),
+            Icon(Icons.star, color: Colors.yellow),
+            Icon(Icons.star, color: Colors.yellow),
+            Icon(Icons.star, color: Colors.yellow),
+            Icon(Icons.star, color: Colors.yellow),
+            Icon(Icons.star, color: Colors.yellow),
+          ],
         ),
       ]),
     );

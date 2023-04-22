@@ -52,7 +52,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     home: SplashScreen(),
     routes: {
-      "second": (context) => Tour2(),
+      "second": (context) => Tourism3(),
     },
   ));
 }
@@ -67,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 1), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Bankui()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => Tourism1()));
     });
   }
 
